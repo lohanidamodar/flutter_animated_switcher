@@ -49,6 +49,15 @@ class _HomePageState extends State<HomePage> {
               width: double.infinity,
               alignment: Alignment.center,
               child: AnimatedSwitcher(
+                transitionBuilder: (child,animation) {
+                  return SlideTransition(
+                    child: child,
+                    position: Tween<Offset>(
+                      begin: const Offset(1.0, 0.0),
+                      end: Offset.zero,
+                    ).animate(animation),
+                  );
+                },
                 duration: Duration(milliseconds: 500),
                 child: body[selected]),
             ),
