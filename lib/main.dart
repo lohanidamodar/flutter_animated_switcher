@@ -48,7 +48,9 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.all(32.0),
               width: double.infinity,
               alignment: Alignment.center,
-              child: body[selected],
+              child: AnimatedSwitcher(
+                duration: Duration(milliseconds: 500),
+                child: body[selected]),
             ),
           ),
           if (selected != 0) ...[
